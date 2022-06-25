@@ -1,31 +1,31 @@
-<section class="hero is-primary is-medium">
+<section class="hero is-link is-small">
   <!-- Hero head: will stick at the top -->
   <div class="hero-head">
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item">
-            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
-          </a>
+          <%= link_to root_path, class: "navbar-item" do %>
+            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64">
+            <title>rice</title><line x1="50.224" y1="19.108" x2="60" 
+            y2="2" stroke="#212121" stroke-linecap="butt"></line> <line x1="43.61" y1="20.5" x2="48" 
+            y2="4" stroke="#212121" stroke-linecap="butt"></line> <circle cx="13.5" cy="11.5" r="1.5" 
+            fill="#212121" stroke="none"></circle> <circle cx="26.5" cy="24.5" r="1.5" fill="#212121" 
+            stroke="none"></circle> <circle cx="33.5" cy="8.5" r="1.5" fill="#212121" stroke="none">
+            </circle> <path d="M19.394,57H44.606A27.993,27.993,0,0,0,60,32H4A27.993,27.993,0,0,0,19.394,57Z">
+            </path> <path d="M56,26a7,7,0,0,0-12.009-4.885A7.984,7.984,0,0,0,32.147,18.65,7,7,0,0,0,19.19,20.4,6.991,6.991,0,0,0,8,26" 
+            stroke="#212121"></path></svg>
+            <span class="has-text-weight-bold is-size-4 ml-4">Nutrition Logger</span>
+          <% end %>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-active">
-              Home
-            </a>
-            <a class="navbar-item">
-              Examples
-            </a>
-            <a class="navbar-item">
-              Documentation
-            </a>
             <span class="navbar-item">
-              <a class="button is-primary is-inverted">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Download</span>
-              </a>
+              <%= link_to "Create new entry", new_entry_path, class: "button is-success" %>
             </span>
           </div>
         </div>
@@ -36,30 +36,13 @@
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
-      <p class="title">
-        Title
-      </p>
-      <p class="subtitle">
-        Subtitle
-      </p>
+      <h1 class="title">
+        <% if content_for(:title) %>
+          <%= yield :title %>
+        <% else %>
+          Nutrition Logger
+        <% end %>
+      </h1>
     </div>
   </div>
-
-  <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot">
-    <nav class="tabs">
-      <div class="container">
-        <ul>
-          <li class="is-active"><a>Overview</a></li>
-          <li><a>Modifiers</a></li>
-          <li><a>Grid</a></li>
-          <li><a>Elements</a></li>
-          <li><a>Components</a></li>
-          <li><a>Layout</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
 </section>
-
-<h1>My header</h1>
